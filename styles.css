@@ -1,0 +1,165 @@
+:root {
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1, h2 {
+  font-weight: 300;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-item {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#search-box {
+  padding: 0.75em 1em;
+  border: 1px solid #8c8c8c;
+  border-radius: 1.5em;
+}
+
+#search-box:focus {
+  outline: none;
+  box-shadow: 0 0 1px 1px #8c8c8c;
+}
+
+#search-button {
+  margin-left: 1em;
+  padding: 0.75em;
+  background-color: #d9d9d9;
+}
+
+.icon-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 50%;
+}
+
+.movies-grid {
+  margin-top: 3em;
+  display: grid;
+  gap: 1.5em;
+  justify-items: center;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.movies-grid-image {
+  border-radius: 1em;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  max-width: 100%;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.modal-close-button {
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.modal-text {
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.modal-text > * {
+  margin: 0;
+}
+
+.modal-heading {
+  grid-column: 1 / 4;
+}
+
+.imdb-rating {
+  grid-column: 1 / 2;
+}
+
+.rated {
+  grid-column: 2 / 3;
+}
+
+.runtime {
+  grid-column: 3 / 4;
+}
+
+.plot, .genre, .actors, .language, .country {
+  grid-column: 1 / 4;
+}
+
+@media (min-width: 768px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal-content {
+    flex-direction: row;
+  }
+
+  .modal-close-button {
+    background-color: transparent;
+  }
+}
+
+@media (min-width: 1024px) {
+  #search-button:hover {
+    background-color: #b3b3b3;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .modal-content {
+    width: 75%;
+    margin: auto;
+  }
+}
